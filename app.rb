@@ -2,6 +2,8 @@ require 'sinatra'
 require 'httparty'
 require 'nokogiri'
 
+set :public_folder, 'public'
+
 post '/track' do
   response = HTTParty.get("http://websro.correios.com.br/sro_bin/txect01$.Inexistente?P_LINGUA=001&P_TIPO=002&P_COD_LIS=#{params[:code]}")
 
@@ -13,10 +15,5 @@ post '/track' do
 end
 
 get "/" do
-  '
-    <form method="GET" action="/track">
-      <input type="text" name="code"/>
-      <input type="submit"/>
-    </form>
-  '
+  send_file File.join(settings.public_folder,'index.html')
 end

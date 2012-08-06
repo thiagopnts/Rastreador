@@ -1,0 +1,78 @@
+<!DOCTYPE html> 
+<html charset="utf-8" lang='pt-br' manifest="tracker.appcache"> 
+	<head> 
+	<title>Package Tracker</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+	<link rel="stylesheet" href="main.css" />
+	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+    <script type="text/javascript"
+      src="http://maps.googleapis.com/maps/api/js?key=AIzaSyB0d-A99bLcUOWWhlL0bsZhsrHavM6lWh4&sensor=false">
+    </script>    
+	<script src="utils.js"></script>
+	<script src="app.js"></script>
+</head> 
+<body> 
+
+<div data-role="page" data-theme="a" id="home">
+
+	<div data-role="header">
+		<h1>PackageTracker</h1>
+	</div>
+
+	<div data-role="content" id="content">	
+      
+      <a href="#new-track" id="start" data-transition="slide" data-role="button">Rastreie sua encomenda</a>
+      <a href="#" id="install" data-transition="slide" data-role="button" data-theme="b">Instalar</a>
+
+	</div><!-- /content -->
+
+</div><!-- /page -->
+
+<div data-role="page" data-theme="a" id="new-track">
+
+	<div data-role="header">
+		<h1>Rastreio</h1>
+	</div>
+
+	<div data-role="content" id="page-content">	
+      <div data-role="fieldcontain" class="ui-hide-label">
+        <form>
+          <label for="search">Digite o código aqui</label>
+          <input type="search" name="search" id="search" data-mini="false" placeholder="Digite o código aqui" required/>
+          <a href="#dialog" data-rel="dialog" id="wrapper" data-transition="slide"></a>
+          <input type="button" id="submit" value="Rastrear!" data-rel="dialog">
+        </form> 
+      </div>
+
+      <h3>Buscas anteriores</h3>
+      <ul data-role="listview" data-theme="a" id="codes">
+      </ul>
+        
+	</div><!-- /content -->
+
+</div><!-- /page -->
+
+
+<!-- Start of second page -->
+<div data-role="page" data-theme="a" id="dialog">
+
+	<div data-role="header">
+		<h1>Rastreio</h1>
+        <p id="response"></p>
+	</div><!-- /header -->
+
+    <div data-role="content">
+      <div id="map" style=" height:300px;">	
+      </div>
+    </div>
+
+</div><!-- /page -->
+
+
+
+
+</body>
+</html>
