@@ -19,6 +19,8 @@ get "/" do
 end
 
 get "/manifest.webapp" do
-  headers 'Content-type' => 'application/x-web-app-manifest+json'
-  send_file File.join(settings.public_folder,'manifest.webapp')
+  puts response.headers['Content-type']
+  response.headers['Content-type'] = "application/x-web-app-manifest+json"
+  puts response.headers['Content-type']
+  send_file File.join('.','manifest.webapp')
 end
