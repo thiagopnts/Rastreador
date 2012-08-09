@@ -20,7 +20,7 @@
 
     Installer.install = function() {
       var appRecord, request;
-      request = window.navigator.mozApps.install("http://localhost:4567/manifest.webapp");
+      request = window.navigator.mozApps.install("http://floating-dusk-6551.herokuapp.com/manifest.webapp");
       appRecord = this.request;
       return $("#install").hide();
     };
