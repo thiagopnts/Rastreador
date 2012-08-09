@@ -19,8 +19,7 @@ get "/" do
 end
 
 get "/manifest.webapp" do
-  puts response.headers['Content-type']
+  #important to add the app to mozilla market place
   response.headers['Content-type'] = "application/x-web-app-manifest+json"
-  puts response.headers['Content-type']
   send_file File.join('.','manifest.webapp')
 end
