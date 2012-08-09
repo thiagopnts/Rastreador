@@ -17,3 +17,8 @@ end
 get "/" do
   send_file File.join(settings.public_folder,'index.html')
 end
+
+get "/manifest.webapp" do
+  headers 'Content-type' => 'application/x-web-app-manifest+json'
+  send_file File.join(settings.public_folder,'manifest.webapp')
+end
